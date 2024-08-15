@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Grid, Typography, Box, Tabs, Tab, useTheme } from '@mui/material';
-import { map } from '../../assets'; 
+import { map } from '../../assets'; // Ensure this is the correct path to your image
 
 interface TabContent {
   title: string;
@@ -20,14 +20,14 @@ interface ApartmentsPlanProps {
 
 const ApartmentPlan: React.FC<ApartmentsPlanProps> = ({ tabData }) => {
   const theme = useTheme();
-  const [activeTab, setActiveTab] = React.useState<string>('first');
+  const [activeTab, setActiveTab] = React.useState<string>(Object.keys(tabData)[0]);
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
     setActiveTab(newValue);
   };
 
   return (
-    <Box sx={{ pb: 7, backgroundColor: '#f5f5f504' }}>
+    <Box sx={{ pb: 7, backgroundColor: theme.palette.background.default }}>
       <Container>
         <TitleSection
           sectionClasses="text-center"
@@ -96,41 +96,45 @@ const TabContentPanel: React.FC<TabContentPanelProps> = ({ activeTab, tabKey, co
   if (activeTab !== tabKey) return null;
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'row', gap: 4, mb: 4 }}>
-      <Box sx={{ flex: 1, p: 2, backgroundColor: '#f5f5f508', textAlign: 'left', borderRadius: 2, padding: 10 }}>
-        <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }} color="secondary">
-          {content.title}
-        </Typography>
-        <Typography variant="caption" sx={{ mb: 2 }}>
-          {content.description}
-        </Typography>
-        <Box sx={{ mt: 2 }}>
-          <ul>
-            {content.details.map((detail, index) => {
-              const dashCount = 39 - (detail.label.length + detail.value.length);
-              const dashes = '-'.repeat(Math.max(0, dashCount));
+    <Grid container spacing={4} sx={{ mb: 4 }}>
+      <Grid item xs={12} md={6}>
+        <Box sx={{ p: 2, backgroundColor: '#f5f5f508', textAlign: 'left', borderRadius: 2, padding: 10 }}>
+          <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }} color="secondary">
+            {content.title}
+          </Typography>
+          <Typography variant="caption" sx={{ mb: 2 }}>
+            {content.description}
+          </Typography>
+          <Box sx={{ mt: 2 }}>
+            <ul>
+              {content.details.map((detail, index) => {
+                const dashCount = 39 - (detail.label.length + detail.value.length);
+                const dashes = '-'.repeat(Math.max(0, dashCount));
 
-              return (
-                <li key={index}>
-                  <Typography variant="body2" component="span" sx={{ fontWeight: 600, color: '#FFC652' }}>
-                    {detail.label}
-                  </Typography>
-                  <Typography variant="body2" component="span" sx={{ marginX: 1 }}>
-                    {dashes}
-                  </Typography>
-                  <Typography variant="body2" component="span">
-                    {detail.value}
-                  </Typography>
-                </li>
-              );
-            })}
-          </ul>
+                return (
+                  <li key={index}>
+                    <Typography variant="body2" component="span" sx={{ fontWeight: 600, color: '#FFC652' }}>
+                      {detail.label}
+                    </Typography>
+                    <Typography variant="body2" component="span" sx={{ marginX: 1 }}>
+                      {dashes}
+                    </Typography>
+                    <Typography variant="body2" component="span">
+                      {detail.value}
+                    </Typography>
+                  </li>
+                );
+              })}
+            </ul>
+          </Box>
         </Box>
-      </Box>
-      <Box sx={{ flex: 1, p: 2, backgroundColor: '#f5f5f5', borderRadius: 2 }}>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <Box sx={{ p: 2, backgroundColor: '#f5f5f5', borderRadius: 2 }}>
         <img src={map} alt={content.title} style={{ width: '100%', borderRadius: 8 }} />
-      </Box>
-    </Box>
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 

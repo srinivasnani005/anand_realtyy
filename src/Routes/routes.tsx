@@ -1,6 +1,6 @@
 import React from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { About, Dashboard, NotFound, Projects } from '../Pages/Exports';
+import { About, Dashboard, Gallery, NotFound, Projects } from '../Pages/Exports';
 import Layout from '../Layout/Layout';
 
 const router = createBrowserRouter([
@@ -24,7 +24,13 @@ const router = createBrowserRouter([
         //projects
         path: "/projects",
         element: <Projects />,
-      }
+      },
+
+      //gallery
+      {
+        path : "/gallery",
+        element : <Gallery />,
+      },
       
     ],
   },
