@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
 import { Box, Button, Container, Grid, Typography, IconButton, Dialog, DialogContent, DialogTitle } from '@mui/material';
-import { FaPlay, FaHome, FaDribbble, FaTwitter, FaFacebookF } from 'react-icons/fa';
+import { FaPlay, FaHome } from 'react-icons/fa';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -153,10 +153,7 @@ const HeroSectionStyle: React.FC<HeroSectionStyleProps> = ({ data }) => {
             ))}
           </Slider>
         </Box>
-      </Box>
-
-      {/* Social Media Icons */}
-      
+      </Box>      
     </>
   );
 };

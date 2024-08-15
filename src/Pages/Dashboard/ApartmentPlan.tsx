@@ -62,7 +62,7 @@ const ApartmentPlan: React.FC<ApartmentsPlanProps> = ({ tabData }) => {
                 },
               },
               '& .Mui-selected': {
-                color: theme.palette.secondary.main,
+                color: "#FfC652",
               },
             }}
           >
@@ -96,9 +96,9 @@ const TabContentPanel: React.FC<TabContentPanelProps> = ({ activeTab, tabKey, co
   if (activeTab !== tabKey) return null;
 
   return (
-    <Grid container spacing={4} sx={{ mb: 4 }}>
+    <Grid container spacing={4} sx={{ mb: 4, alignItems: 'center' }}>
       <Grid item xs={12} md={6}>
-        <Box sx={{ p: 2, backgroundColor: '#f5f5f508', textAlign: 'left', borderRadius: 2, padding: 10 }}>
+        <Box sx={{ p: 8, backgroundColor: '#f5f5f508', textAlign: 'left', borderRadius: 2 }}>
           <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }} color="secondary">
             {content.title}
           </Typography>
@@ -106,13 +106,13 @@ const TabContentPanel: React.FC<TabContentPanelProps> = ({ activeTab, tabKey, co
             {content.description}
           </Typography>
           <Box sx={{ mt: 2 }}>
-            <ul>
+            <ul style={{ paddingLeft: 0, listStyle: 'none' }}>
               {content.details.map((detail, index) => {
                 const dashCount = 39 - (detail.label.length + detail.value.length);
                 const dashes = '-'.repeat(Math.max(0, dashCount));
 
                 return (
-                  <li key={index}>
+                  <li key={index} style={{ marginBottom: '8px' }}>
                     <Typography variant="body2" component="span" sx={{ fontWeight: 600, color: '#FFC652' }}>
                       {detail.label}
                     </Typography>
@@ -131,7 +131,7 @@ const TabContentPanel: React.FC<TabContentPanelProps> = ({ activeTab, tabKey, co
       </Grid>
       <Grid item xs={12} md={6}>
         <Box sx={{ p: 2, backgroundColor: '#f5f5f5', borderRadius: 2 }}>
-        <img src={map} alt={content.title} style={{ width: '100%', borderRadius: 8 }} />
+          <img src={map} alt={content.title} style={{ width: '100%', borderRadius: 8 }} />
         </Box>
       </Grid>
     </Grid>
