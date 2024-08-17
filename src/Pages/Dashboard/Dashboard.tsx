@@ -3,7 +3,7 @@ import HeroSectionStyle from './HeroSectionStyle';
 import { house1, house2, house3, logo1, temp } from '../../assets';
 import AboutUsSectionOne from './AboutUsSection';
 import AboutUsSectionTwo from './AboutUsSectionTwo';
-import Feature from './Feature';
+import Feature from './Services';
 import ApartmentPlan from './ApartmentPlan';
 
 // Sample data for Hero Section
@@ -83,11 +83,11 @@ const apartmentsPlanData = {
     "description": "Enimad minim veniam quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo eiusmod tempor. Incididunt labore et dolore magna aliqua. sed ayd minim veniam.",
     "imageUrl": "/img/others/10.png",
     "details": [
-      { "label": "Total Area", "value": "2800 Sq. Ft" },
-      { "label": "Bedroom", "value": "150 Sq. Ft" },
-      { "label": "Bathroom", "value": "45 Sq. Ft" },
-      { "label": "Belcony/Pets", "value": "50 Sq.Ft" },
-      { "label": "Lounge", "value": "650 Sq. Ft" }
+      { "label": "Living Area", "value": "2800 Sq. Ft" },
+      { "label": "Master Bedroom", "value": "160 Sq. Ft" },
+      { "label": "Ensuite Bathroom", "value": "50 Sq. Ft" },
+      { "label": "Balcony Space", "value": "75 Sq.Ft" },
+      { "label": "Dining Area", "value": "700 Sq. Ft" }
     ]
   },
   "second": {
@@ -95,11 +95,11 @@ const apartmentsPlanData = {
     "description": "Enimad minim veniam quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo eiusmod tempor. Incididunt labore et dolore magna aliqua. sed ayd minim veniam.",
     "imageUrl": "/img/others/10.png",
     "details": [
-      { "label": "Total Area", "value": "2800 Sq. Ft" },
-      { "label": "Bedroom", "value": "150 Sq. Ft" },
-      { "label": "Bathroom", "value": "45 Sq. Ft" },
-      { "label": "Belcony/Pets", "value": "50 Sq.Ft" },
-      { "label": "Lounge", "value": "650 Sq. Ft" }
+      { "label": "Total Space", "value": "3000 Sq. Ft" },
+      { "label": "Guest Bedroom", "value": "140 Sq. Ft" },
+      { "label": "Bath with Tub", "value": "60 Sq. Ft" },
+      { "label": "Outdoor Terrace", "value": "85 Sq.Ft" },
+      { "label": "Open Kitchen", "value": "800 Sq. Ft" }
     ]
   },
   "third": {
@@ -107,11 +107,11 @@ const apartmentsPlanData = {
     "description": "Enimad minim veniam quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo eiusmod tempor. Incididunt labore et dolore magna aliqua. sed ayd minim veniam.",
     "imageUrl": "/img/others/10.png",
     "details": [
-      { "label": "Total Area", "value": "2800 Sq. Ft" },
-      { "label": "Bedroom", "value": "150 Sq. Ft" },
-      { "label": "Bathroom", "value": "45 Sq. Ft" },
-      { "label": "Belcony/Pets", "value": "50 Sq.Ft" },
-      { "label": "Lounge", "value": "650 Sq. Ft" }
+      { "label": "Overall Area", "value": "3500 Sq. Ft" },
+      { "label": "King Suite", "value": "180 Sq. Ft" },
+      { "label": "Luxury Bathroom", "value": "70 Sq. Ft" },
+      { "label": "Private Balcony", "value": "100 Sq.Ft" },
+      { "label": "Entertainment Lounge", "value": "900 Sq. Ft" }
     ]
   },
   "fourth": {
@@ -119,11 +119,11 @@ const apartmentsPlanData = {
     "description": "Enimad minim veniam quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo eiusmod tempor. Incididunt labore et dolore magna aliqua. sed ayd minim veniam.",
     "imageUrl": "/img/others/10.png",
     "details": [
-      { "label": "Total Area", "value": "2800 Sq. Ft" },
-      { "label": "Bedroom", "value": "150 Sq. Ft" },
-      { "label": "Bathroom", "value": "45 Sq. Ft" },
-      { "label": "Belcony/Pets", "value": "50 Sq.Ft" },
-      { "label": "Lounge", "value": "650 Sq. Ft" }
+      { "label": "Garden Area", "value": "4000 Sq. Ft" },
+      { "label": "Herb Garden", "value": "120 Sq. Ft" },
+      { "label": "Jacuzzi Bath", "value": "80 Sq. Ft" },
+      { "label": "Sky Deck", "value": "150 Sq.Ft" },
+      { "label": "BBQ Area", "value": "950 Sq. Ft" }
     ]
   },
   "five": {
@@ -131,11 +131,11 @@ const apartmentsPlanData = {
     "description": "Enimad minim veniam quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet cons aetetur adipisicing elit sedo eiusmod tempor. Incididunt labore et dolore magna aliqua. sed ayd minim veniam.",
     "imageUrl": "/img/others/10.png",
     "details": [
-      { "label": "Total Area", "value": "2800 Sq. Ft" },
-      { "label": "Bedroom", "value": "150 Sq. Ft" },
-      { "label": "Bathroom", "value": "45 Sq. Ft" },
-      { "label": "Belcony/Pets", "value": "50 Sq.Ft" },
-      { "label": "Lounge", "value": "650 Sq. Ft" }
+      { "label": "Duplex Area", "value": "3200 Sq. Ft" },
+      { "label": "Gallery Space", "value": "200 Sq. Ft" },
+      { "label": "Spa Bathroom", "value": "90 Sq. Ft" },
+      { "label": "Rooftop Terrace", "value": "110 Sq.Ft" },
+      { "label": "Double Height Living Room", "value": "1000 Sq. Ft" }
     ]
   }
 };

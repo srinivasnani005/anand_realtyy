@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-// Create an Axios instance for general API requests
+
 export const http = axios.create({
   baseURL: "http://localhost:3001", 
   headers: {
@@ -10,13 +10,13 @@ export const http = axios.create({
   },
 });
 
-// Request interceptor to add JWT token and decrypted id from cookies to headers
+
 http.interceptors.request.use((config) => {
   const token = Cookies.get("access_token");
   const encryptedId = Cookies.get("esrufoiprel");
 
   if (encryptedId) {
-    config.headers.sub = encryptedId;  // Use 'sub' as key to match the backend
+    config.headers.sub = encryptedId;  
   }
 
   if (token) {
@@ -25,7 +25,7 @@ http.interceptors.request.use((config) => {
   return config;
 });
 
-// Response interceptor to handle errors
+
 http.interceptors.response.use(
   function (response) {
     return response;

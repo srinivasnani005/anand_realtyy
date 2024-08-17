@@ -27,7 +27,7 @@ const ApartmentPlan: React.FC<ApartmentsPlanProps> = ({ tabData }) => {
   };
 
   return (
-    <Box sx={{ pb: 7, backgroundColor: theme.palette.background.default }}>
+    <Box sx={{ pb: 7,  }}>
       <Container>
         <TitleSection
           sectionClasses="text-center"
@@ -47,7 +47,6 @@ const ApartmentPlan: React.FC<ApartmentsPlanProps> = ({ tabData }) => {
             aria-label="Apartments Plan Tabs"
             centered
             sx={{
-              color: 'rgba(255, 255, 255, 0.8)',
               '& .MuiTabs-flexContainer': {
                 justifyContent: 'center',
               },
@@ -55,8 +54,8 @@ const ApartmentPlan: React.FC<ApartmentsPlanProps> = ({ tabData }) => {
                 backgroundColor: theme.palette.secondary.main,
               },
               '& .MuiTab-root': {
+                color: '#FFFFFF87',
                 textTransform: 'none',
-                color: 'rgba(255, 255, 255, 0.8)',
                 '&:hover': {
                   color: '#FFFFFF',
                 },
@@ -93,12 +92,13 @@ interface TabContentPanelProps {
 }
 
 const TabContentPanel: React.FC<TabContentPanelProps> = ({ activeTab, tabKey, content }) => {
+  const theme = useTheme();
   if (activeTab !== tabKey) return null;
 
   return (
     <Grid container spacing={4} sx={{ mb: 4, alignItems: 'center' }}>
       <Grid item xs={12} md={6}>
-        <Box sx={{ p: 8, backgroundColor: '#f5f5f508', textAlign: 'left', borderRadius: 2 }}>
+        <Box sx={{ p: 8, backgroundColor: theme.palette.background.default , textAlign: 'left', borderRadius: 2, }}>
           <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }} color="secondary">
             {content.title}
           </Typography>

@@ -1,17 +1,22 @@
 import React from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { About, Dashboard, Gallery, NotFound, Projects } from '../Pages/Exports';
+import { About, Dashboard, Gallery, Landing, NotFound, Projects, Selector } from '../Pages/Exports';
 import Layout from '../Layout/Layout';
 
 const router = createBrowserRouter([
-  {
+
+    {
+      path: '/',
+      element: <Landing />,
+      errorElement: <NotFound />, 
+    },
+    {
+      path : "/selector",
+      element : <Selector />,
+    },
+    {
     element: <Layout />,
     children: [
-      {
-        path: '/',
-        element: <Navigate to="/dashboard" replace />,
-        errorElement: <NotFound />, 
-      },
       {
         path: "/dashboard",
         element: <Dashboard />,
@@ -31,7 +36,6 @@ const router = createBrowserRouter([
         path : "/gallery",
         element : <Gallery />,
       },
-      
     ],
   },
   {

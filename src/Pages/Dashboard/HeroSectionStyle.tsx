@@ -26,13 +26,14 @@ const HeroSectionStyle: React.FC<HeroSectionStyleProps> = ({ data }) => {
   const [isOpen, setOpen] = useState(false);
 
   const heroSettings = {
-    arrows: false, // Hide arrows
+    arrows: false, 
     infinite: true,
-    autoplay: false,
+    autoplay: true, 
+    autoplaySpeed: 2800, 
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    asNavFor: nav2 || undefined,  // Link with nav2
+    asNavFor: nav2 || undefined,  
     responsive: [
       { breakpoint: 1600, settings: { slidesToShow: 1, slidesToScroll: 1 } },
       { breakpoint: 1200, settings: { slidesToShow: 1, slidesToScroll: 1 } },
@@ -86,11 +87,10 @@ const HeroSectionStyle: React.FC<HeroSectionStyleProps> = ({ data }) => {
                         <FaHome color='#FFC652' style={{ fontSize: '24px', marginRight: '8px' }} />
                         {item.subtitle}
                       </Typography>
-                      <Typography variant='h3' sx={{ mb: 2, color: 'white', fontWeight: '650',  }}>
+                      <Typography variant='h3' sx={{ mb: 2, color: 'white', fontWeight: '650' }}>
                         {item.Title}
                       </Typography>
                       <Box sx={{ display: 'flex', alignItems: 'flex-start', marginBottom: 3 }}>
-                        {/* <Box sx={{ background: '#FFC652', borderRadius: '15px', width: '8px', height: '60px', marginRight: 2 }} /> */}
                         <Typography variant="body2" sx={{ color: 'white', fontSize: { xs: '16px', sm: '18px', md: '20px' }, fontWeight: '300', lineHeight: '1.5', marginBottom: 0 }}>
                           {item.Desc}
                         </Typography>
@@ -100,7 +100,7 @@ const HeroSectionStyle: React.FC<HeroSectionStyleProps> = ({ data }) => {
                           {item.buttonText}
                         </Button>
                         {item.videoButton ? (
-                          <IconButton onClick={() => setOpen(true)} sx={{ backgroundColor: 'white' , animation: 'pulse2 1s infinite', }}>
+                          <IconButton onClick={() => setOpen(true)} sx={{ backgroundColor: 'white', animation: 'pulse2 1s infinite' }}>
                             <FaPlay color="primary" />
                           </IconButton>
                         ) : (
@@ -123,16 +123,6 @@ const HeroSectionStyle: React.FC<HeroSectionStyleProps> = ({ data }) => {
         </Slider>
 
         {/* Thumbnail Slider */}
-        {/* <Box sx={{ position: 'absolute', top: { xs: '400px', sm: '400px', md: '400px' }, right: '10%', width: { xs: '200px', sm: '250px', md: '300px' }, zIndex: 2 }}>
-          <Slider {...navSettings} ref={slider => setNav2(slider)} className="hero-slider-nav">
-            {data.map((item, index) => (
-              <Box key={index} sx={{ display: 'flex', justifyContent: 'center', padding: 1 }}>
-                <img src={item.heroimage} alt="Thumbnail" style={{ width: '80px', height: 'auto', borderRadius: '8px', cursor: "pointer" }} />
-              </Box>
-            ))}
-          </Slider>
-        </Box> */}
-
         <Box sx={{
           position: 'absolute',
           bottom: { xs: '20px', sm: '30px', md: '50px' },
@@ -153,7 +143,7 @@ const HeroSectionStyle: React.FC<HeroSectionStyleProps> = ({ data }) => {
             ))}
           </Slider>
         </Box>
-      </Box>      
+      </Box>
     </>
   );
 };
