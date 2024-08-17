@@ -14,7 +14,7 @@ const Landing: React.FC = () => {
     // Animate button pulse effect
     tl.to('.landing-button', {
       scale: 0.8,
-      duration: 0.2,
+      duration: 0.3,
       ease: 'power2.out',
       opacity: 0,
       onComplete: () => {
@@ -26,13 +26,13 @@ const Landing: React.FC = () => {
           borderLeft: '30vw solid transparent',
           borderRight: '30vw solid transparent',
           borderTop: '50vh solid transparent', 
-          duration: 0.5,
+          duration: 0.3,
           ease: 'power2.out',
           onComplete: () => {
             gsap.to('.landing-triangle', {
               backgroundColor: '#FFC652',
               // y: '-100vh',
-              duration: 1,
+              duration: 0.4,
               ease: 'power2.out',
               onComplete: () => navigate('/selector')
             });
@@ -43,10 +43,17 @@ const Landing: React.FC = () => {
   };
 
   useEffect(() => {
-    // Animate button appearance
-    gsap.fromTo('.landing-button',
+    // Animate button and triangle appearance with fade-in effect
+    const tl = gsap.timeline();
+
+    tl.fromTo('.landing-triangle',
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out' }
+    )
+    .fromTo('.landing-button',
       { opacity: 0, scale: 0.8 },
-      { opacity: 1, scale: 1, duration: 1, ease: 'power2.out' }
+      { opacity: 1, scale: 1, duration: 1.5, ease: 'elastic.out(1, 0.5)' },
+      "-=1"
     );
   }, []);
 
