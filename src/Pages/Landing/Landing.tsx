@@ -85,9 +85,9 @@ const Landing: React.FC = () => {
           left: '50%',
           width: 0,
           height: 0,
-          borderLeft: '20vw solid transparent',
-          borderRight: '20vw solid transparent',
-          borderTop: '20vh solid #073F8C',
+          borderLeft: '30vw solid transparent',
+          borderRight: '30vw solid transparent',
+          borderTop: '22vh solid #073F8C',
           opacity : 0.8, 
           transform: 'translateX(-50%) rotate(180deg)',
           zIndex: 1
@@ -100,14 +100,15 @@ const Landing: React.FC = () => {
             sx={{
               width: '150px',
               position: 'absolute',
-              bottom: '50px',
+              bottom: { xs: '60px', md: '55px' },
               left: '50%',
               transform: 'translateX(-50%) rotate(180deg)',
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-              '&:hover': {
-                backgroundColor: '#FFC652',
-                boxShadow: '0 6px 12px rgba(0, 0, 0, 0.3)',
-              }
+              // boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+              // '&:hover': {
+              //   backgroundColor: '#FFC652',
+              //   boxShadow: '0 6px 12px rgba(0, 0, 0, 0.3)',
+              //   color : '#073F8C'
+              // }
             }}
           >
             Get Started

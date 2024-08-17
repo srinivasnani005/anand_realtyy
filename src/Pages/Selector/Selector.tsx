@@ -68,7 +68,7 @@ const Selector: React.FC = () => {
   };
 
   const cardStyles = {
-    width: '25%',
+    flex: '1 1 300px', // Makes cards flexible and responsive
     backgroundColor: '#073F8C',
     color: 'white',
     textAlign: 'center',
@@ -88,6 +88,13 @@ const Selector: React.FC = () => {
     }
   };
 
+  const headerStyles = {
+    color: '#FFC652',
+    borderBottom: '2px solid #FFC652',
+    paddingBottom: '8px',
+    marginBottom: '16px'
+  };
+
   return (
     <Box
       sx={{
@@ -99,7 +106,14 @@ const Selector: React.FC = () => {
         justifyContent: 'center',
         textAlign: 'center',
         backgroundColor: backgroundColor,
-        backdropFilter: 'blur(10px)'
+        backdropFilter: 'blur(10px)',
+        p: 2, // Padding for small devices
+        '@media (min-width:600px)': {
+          p: 4, // Padding for medium devices
+        },
+        '@media (min-width:900px)': {
+          p: 6, // Padding for large devices
+        },
       }}
     >
       <Box
@@ -120,16 +134,24 @@ const Selector: React.FC = () => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          width: '90%',
+          width: '100%',
+          maxWidth: '1200px', // Max width for large screens
           gap: '20px',
-          flexWrap: 'wrap'
+          flexWrap: 'wrap',
+          p: 2, // Padding for small devices
+          '@media (min-width:600px)': {
+            p: 4, // Padding for medium devices
+          },
+          '@media (min-width:900px)': {
+            p: 6, // Padding for large devices
+          },
         }}
       >
         {showButtons && (
           <>
             <Card className="selector-card" sx={cardStyles}>
               <CardContent>
-                <Typography variant="h6" sx={{ mb: 2, fontWeight: '600' }}>
+                <Typography variant="h6" sx={headerStyles}>
                   𝐼𝒻 𝓎𝑜𝓇𝑒 𝒶 Home Seeker
                 </Typography>
                 <Typography variant="caption" sx={{ textAlign: 'justify' }}>
@@ -145,7 +167,7 @@ const Selector: React.FC = () => {
 
             <Card className="selector-card" sx={cardStyles}>
               <CardContent>
-                <Typography variant="h6" sx={{ mb: 2, fontWeight: '600' }}>
+                <Typography variant="h6" sx={headerStyles}>
                   𝐼𝒻 𝓎𝑜𝓇𝑒 𝒶 Developer/Builder
                 </Typography>
                 <Typography variant="body2" sx={{ textAlign: 'justify' }}>
@@ -161,7 +183,7 @@ const Selector: React.FC = () => {
 
             <Card className="selector-card" sx={cardStyles}>
               <CardContent>
-                <Typography variant="h6" sx={{ mb: 2, fontWeight: '600' }}>
+                <Typography variant="h6" sx={headerStyles}>
                   𝐼𝒻 𝓎𝑜𝓇𝑒 𝒶 Channel Partner
                 </Typography>
                 <Typography variant="body2" sx={{ textAlign: 'justify' }}>
@@ -179,9 +201,9 @@ const Selector: React.FC = () => {
       </Box>
 
       {/* Second Modal */}
-      <Dialog open={openSecondModal} onClose={handleCloseSecondModal}>
+      <Dialog open={openSecondModal} onClose={handleCloseSecondModal} fullWidth maxWidth="sm">
         <DialogTitle>Schedule a Call</DialogTitle>
-        <DialogContent>
+        <DialogContent sx={{ width: '100%', maxWidth: '500px' }}>
           <TextField
             margin="dense"
             label="Name"
@@ -191,6 +213,7 @@ const Selector: React.FC = () => {
             name="name"
             value={formData.name}
             onChange={handleFormChange}
+            sx={{ mb: 2 }}
           />
           <TextField
             margin="dense"
@@ -201,6 +224,7 @@ const Selector: React.FC = () => {
             name="mobile"
             value={formData.mobile}
             onChange={handleFormChange}
+            sx={{ mb: 2 }}
           />
           <TextField
             margin="dense"
@@ -211,6 +235,7 @@ const Selector: React.FC = () => {
             name="email"
             value={formData.email}
             onChange={handleFormChange}
+            sx={{ mb: 2 }}
           />
           <TextField
             margin="dense"
@@ -232,9 +257,9 @@ const Selector: React.FC = () => {
       </Dialog>
 
       {/* Third Modal */}
-      <Dialog open={openThirdModal} onClose={handleCloseThirdModal}>
+      <Dialog open={openThirdModal} onClose={handleCloseThirdModal} fullWidth maxWidth="sm">
         <DialogTitle>Provide Your Details</DialogTitle>
-        <DialogContent>
+        <DialogContent sx={{ width: '100%', maxWidth: '500px' }}>
           <TextField
             margin="dense"
             label="Name"
@@ -244,6 +269,7 @@ const Selector: React.FC = () => {
             name="name"
             value={formData.name}
             onChange={handleFormChange}
+            sx={{ mb: 2 }}
           />
           <TextField
             margin="dense"
@@ -254,6 +280,7 @@ const Selector: React.FC = () => {
             name="mobile"
             value={formData.mobile}
             onChange={handleFormChange}
+            sx={{ mb: 2 }}
           />
           <TextField
             margin="dense"
@@ -264,6 +291,7 @@ const Selector: React.FC = () => {
             name="email"
             value={formData.email}
             onChange={handleFormChange}
+            sx={{ mb: 2 }}
           />
           <TextField
             margin="dense"
